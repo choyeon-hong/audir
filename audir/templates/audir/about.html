@@ -1,0 +1,209 @@
+{% extends 'audir/base.html' %}
+{%load static %}
+{% load account %}
+{% block body_block %}
+
+<section class="py-5 mt-5">
+	<div class="mt-5 mt-md-0">
+	<div class="container">
+	<h5 class="text-muted text-center">What is</h5>
+	<h2 class="display-5 fw-bold text-center">A u D i R ? </h2>
+	<img class="d-block mx-auto mb-4 mt-5" src="{% static 'logo.png' %}" alt="logo" width="290" height="300">
+	<div class="col-lg-12 text-center mb-3 pb-3">
+		<h3 class="mb-5 mt-5">
+			<span class="bold-black">Au</span><span class="gray">tomated </span> <br>
+			<span class="bold-black">Di</span><span class="gray">git </span>
+			<span class="bold-black">R</span><span class="gray">atio <br>Measurements</span>
+		</h3>
+	</div>
+
+				<div class="text-center mt-0">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+			<div class="text-center mb-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+
+
+
+		<div class="row gx-4 align-items-center justify-content-between">
+			<div class="col-md-5 order-2 order-md-1">
+				<div class="mt-5 mt-md-0">
+					<span class="text-muted">What is</span>
+					<h2 class="display-5 fw-bold">Digit Ratio ? </h2>
+					<p class="lead">
+						The digit ratio refers to the length ratio between the index finger (2D) and the ring finger (4D). 
+						This ratio is associated with prenatal exposure to sex hormones, especially testosterone and estrogen.
+						It has been linked to physical, psychological, and behavioural traits.</p>
+					<p class="lead">Well-known findings show that:</p>
+						<ul>
+							<li>Men typically have a lower digit ratio than women.</li>
+							<li>Men with lower digit ratios are more likely to be risk-taking, assertive, competitive, and may show higher levels of aggression.</li>
+							<li>Women with higher digit ratios are often associated with greater empathy, social sensitivity, and verbal fluency.</li>
+						</ul>
+					<p>Additionally, it has also been studied in relation to athletic performance, decision-making, 
+					sexual orientation, and correlations to certain diseases and cancer. </p>
+				</div>
+			</div>
+			<div class="mt-5 mt-md-0">
+			</div>
+			<div class="col-md-6 offset-md-1 order-1 order-md-2">
+				<div class="row gx-1 gx-lg-1">
+					<div class="col-6">
+						<div class="mb-5"><img class="img-fluid rounded-3" src="{% static 'logoreverse.png'%}"></div>
+					</div>
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'logo.png'%}"></div>
+					</div>
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'logo.png'%}"></div>
+					</div>
+					<div class="col-6">
+						<div class="mb-5"><img class="img-fluid rounded-3" src="{% static 'logoreverse.png'%}"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+					<h2 class="display-5 fw-bold mt-3 text-center mb-3">Motivation</h2>
+					<div class="text-center mx-5 px-5">
+					<p class="lead text-muted ">However, traditional measurement methods are <b>manual and vary across studies</b>, leading to inconsistencies and inefficiencies.</p>
+					<p class="lead pb-5">We addresses this challenge by using computer vision technology to automatically detect hand landmarks through the MediaPipe pre-trained model, 
+						which simplifies the digit ratio measurement process.</p><br>
+					<h2>No AI expertise required – we provide the technology.</h2>
+					</div>
+			<!--arrows from : https://icons.getbootstrap.com/-->
+			<div class="text-center mt-5 pt-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+			<div class="text-center mb-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+
+
+
+		<section class="bg-dark position-relative bottom-0 end-0 d-flex px-5">
+			<div class="mt-5 mt-md-0 text-white mb-5 mx-5">
+				<h5 class="mt-5 text-left">Do you</h5>
+				<h2 class="display-5 fw-bold mx-3">want to know more?</h2>
+						<div class="text-center pt-5">
+          <a href="{% url 'audir:how_it_works' %}" class="btn btn-light btn-lg">How it works?</a>
+        </div>
+	</section>
+
+		{% comment %} <section class="bg-dark position-relative bottom-0 end-0 d-flex px-5">
+			<div class="mt-5 mt-md-0 text-white mb-5 mx-5">
+				<h5 class="mt-5 text-left">Do you</h5>
+				<h2 class="display-5 fw-bold mx-3">want to know more?</h2>
+				<div class="mt-5 mt-md-0 mx-5 px-5 text-center">
+					<!--https://getbootstrap.com/docs/5.0/content/typography/-->
+					<p class="lead">Hormonal effects influence bone development, so X-rays are the most accurate way to measure digit length. X1 on the figure is the most accurate measurment of the bone.
+						<figure>
+							<img src="{% static 'xray.png'%}" alt="Measurement methods" width="300" height="400" class="mx-auto d-block"/>
+							<figcaption class="blockquote-footer mt-3 px-5 mx-3">Xi, H., Li, M., Fan, Y. et al. A Comparison of Measurement Methods and Sexual Dimorphism for Digit Ratio (2D:4D) in Han Ethnicity. Arch Sex Behav 43, 329–333 (2014). https://doi.org/10.1007/s10508-013-0179-9</figcaption>
+						</figure>
+					<p class="pb-5">X1 : from base of proximal phalanx to distal phalanx tip.</p>
+					</p>
+					<p class="lead">However, it is often impractical to obtain X-rays in real-world studies.<br> Instead, common alternatives include:</p>
+						<ul>
+							<figure>
+								<img class="img-fluid mt-3" src="{% static 'palm_.png'%}" width="500" height="300" />
+								<figcaption class="blockquote-footer mt-3 px-5 mx-3"> Kumar, S., Voracek, M., Singh, M. (2019). Differential placing of flexion creases contributes to sex differences in the second-to-fourth digit ratio (2D:4D). 
+								Frontiers in Endocrinology, 10, 537. https://doi.org/10.3389/fendo.2019.00537 </figcaption>
+							</figure>
+							<p>Direct: from finger crease to tip (palm side and including soft tissue).</p>
+							<figure>
+								<img class="img-fluid mt-5" src="{% static 'dorsal_.png'%}" width="500" height="300">
+								<figcaption class="blockquote-footer mt-3 px-5 mx-3">Ibid </figcaption>
+							</figure>
+							<p> X2: from base of proximal phalanx to tip (dorsal side and including soft tissue).</p>
+						</ul>
+					</p>
+					<p class="lead py-4">But, these methods include soft tissue, which can reduce accuracy.</p>
+				</div>
+			</div>
+		</section>
+
+
+	<section class="py-5">
+		<div class="container">
+		<div class="row gx-1 align-items-center justify-content-between">
+			<div class="col-md-5 order-2 order-md-1">
+				<div class="mt-5 mt-md-0">
+					<h2 class="display-5 fw-bold">Solution</h2>
+					<p class="lead"> Our method detects hand joints by using Mediapipe hand landmarks model and excludes soft tissue. It measures true finger lengths — regardless of hand orientation (palm or dorsal).</p>
+					<p class="lead">It is much closer to the accurate measurement method and provides better consistency, reproducibility, accuracy and convenience without X-rays.</p>
+				</div>
+			</div>
+			<div class="col-md-6 offset-md-1 order-1 order-md-2">
+				<div class="row gx-1 gx-lg-1">
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'xray.png'%}" ></div>
+					</div>
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'ex_result.jpg'%}" ></div>
+					</div>
+					</div>
+				</div>
+			</div>
+		<div class="text-center pt-5">
+          <a href="{% url 'audir:how_it_works' %}" class="btn btn-dark btn-lg">How it works?</a>
+        </div>
+		</div>
+	</section> {% endcomment %}
+	</div>
+</section>
+
+<style>
+.bold-black {
+	font-weight: bold;
+	color: black;
+}
+.gray {
+	color: gray;
+}
+</style>
+{% endblock %}

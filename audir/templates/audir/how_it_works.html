@@ -1,0 +1,162 @@
+{% extends 'audir/base.html' %}
+{%load static %}
+{% load account %}
+{% block body_block %}
+
+    <section class="py-5 py-xl-8 bsb-section-py-xxl-1">
+      <div class="container mb-5 mb-md-6 mb-xl-10">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 text-center">
+            <h3 class="fs-6 text-secondary mb-2 text-uppercase mt-5 pt-5">Our technology</h3>
+            <h2 class="display-4 fw-bold mb-0">How to Measure Accurately?</h2>
+          </div>
+        </div>
+      </div>
+		<section class="bg-dark position-relative bottom-0 end-0 px-5">
+			<div class="mt-5 mt-md-0 text-white mb-5 mx-5 text-center">
+				<div class="mt-5 mt-md-0 mx-5 px-5">
+					<!--https://getbootstrap.com/docs/5.0/content/typography/-->
+					<p class="pt-5 mt-5 lead">X-rays are the most accurate way to measure digit length because the hormones influence bone development.<br> X1 on the figure is the most accurate measurment of the bone.
+						<figure>
+							<img src="{% static 'xray.png'%}" alt="Measurement methods" width="300" height="400" class="mx-auto d-block"/>
+							<figcaption class="blockquote-footer mt-1 px-5 mx-3">1)</figcaption>
+						</figure>
+					<p class="pb-5 text-secondary">X1 : from base of proximal phalanx to distal phalanx tip.</p>
+					</p>
+					<p class="lead">However, it is often impractical to obtain X-rays in real-world studies.<br> Instead, common alternatives include:</p>
+						<ul>
+							<figure>
+								<img class="img-fluid mt-3" src="{% static 'palm_.png'%}" width="500" height="300" />
+								<figcaption class="blockquote-footer mt-1 px-5 mx-3"> 2) </figcaption>
+							</figure>
+							<p class="text-secondary">Direct: from finger crease to tip (palm side and including soft tissue).</p>
+							<figure>
+								<img class="img-fluid mt-5" src="{% static 'dorsal_.png'%}" width="500" height="300">
+								<figcaption class="blockquote-footer mt-1 px-5 mx-3">Ibid </figcaption>
+							</figure>
+							<p class="text-secondary"> X2: from base of proximal phalanx to tip (dorsal side and including soft tissue).</p>
+						</ul>
+					</p>
+					<p class="lead py-5 ">But,<br> these methods include soft tissue, which can reduce accuracy.</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="text-center mt-5 pt-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+			<div class="text-center mb-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				<path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+
+
+	<section class="py-5">
+		<div class="container">
+		<div class="row gx-1 align-items-center justify-content-between">
+			<div class="col-md-5 order-2 order-md-1">
+				<div class="mt-5 mt-md-0">
+					<h2 class="display-5 fw-bold">Solution</h2>
+					<p class="lead"> Our method detects hand joints by using Mediapipe hand landmarks model and excludes soft tissue. It measures true finger lengths — regardless of hand orientation (palm or dorsal).</p>
+					<p class="lead">It is much closer to the accurate measurement method and provides better consistency, reproducibility, accuracy and convenience without X-rays.</p>
+				</div>
+			</div>
+			<div class="col-md-6 offset-md-1 order-1 order-md-2">
+				<div class="row gx-0 gx-lg-0">
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'ex_result_2.jpg'%}" ></div>
+					</div>
+					<div class="col-6">
+						<div class="mb-2"><img class="img-fluid rounded-3" src="{% static 'ex_result.jpg'%}" ></div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+</section>
+
+      <div class="col-12">
+      <figure>
+        <div class="mb-0"><img class="img-fluid rounded-3 mx-auto d-block" src="{% static 'hand_landmarks.png'%}" width="700" height="300"></div>
+        <figcaption class="blockquote-footer mt-3 text-center"> 3)</figcaption>
+      </figure>
+	<section class="pb-5">
+		<div class="container">
+		<div class="row gx-1 align-items-center justify-content-between text-center">
+				<div class="mt-5 mt-md-0">
+					<p class="lead px-5 mx-5">MediaPipe hand landmarks model identifies 21 hand-knuckle landmarks, as illustrated in the figure. Our solution measure the distances between landmark 5 to 8 for the index finger, and 13 to 16 for the ring finger.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-md-0 gx-xxl-5 mb-5 pb-5">
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <!--icons from : https://icons.getbootstrap.com/-->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                <h4 class="fw-bold mb-4">Hand Landmark Detection</h4>
+                <p class="mb-4 text-secondary">MediaPipe hand model detects 21 three-dimensional hand landmarks from each image to locate finger joints accurately. They </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
+                  <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1z"/>
+                </svg>
+                <h4 class="fw-bold mb-4">Measure Fingers</h4>
+                <p class="mb-4 text-secondary">Detected landmarks are converted into coordinates and finger lengths are calculated using the Euclidean distance between joints.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2m6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128z"/>
+                  </svg>
+                <h4 class="fw-bold mb-4">Process Results</h4>
+                <p class="mb-4 text-secondary">Detection results are visualised on each image. The digit ratio is calculated as the length of the index finger divided by the length of the ring finger.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="px-5 mx-5 text-end text-secondary pt-5 mt-5"><small>
+        1) Xi, H., Li, M., Fan, Y. et al. A Comparison of Measurement Methods and Sexual Dimorphism for Digit Ratio (2D:4D) in Han Ethnicity. Arch Sex Behav 43, 329–333 (2014). https://doi.org/10.1007/s10508-013-0179-9<br>
+        2) Kumar, S., Voracek, M., Singh, M. (2019). Differential placing of flexion creases contributes to sex differences in the second-to-fourth digit ratio (2D:4D). Frontiers in Endocrinology, 10, 537. https://doi.org/10.3389/fendo.2019.00537<br>
+        3) https://ai.google.dev/static/edge/mediapipe/images/solutions/hand-landmarks.png </small>
+        </p>
+{% endblock %}

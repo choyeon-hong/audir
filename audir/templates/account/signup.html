@@ -1,0 +1,66 @@
+{% extends 'audir/base.html' %}
+{% load account %}
+{% block body_block %}
+<!--use allauth builtin forms-->
+    <section class="main-content">
+        <div class="auth-container">
+            <h1>Register Here</h1>
+            <form method="post" action=".">
+            {% csrf_token %}
+            {{ form.non_field_errors | safe }}
+            <input type="hidden" name="remember" value="true" />
+            <div>
+              <div class="form-group">
+                {{ form.username.errors | safe }}
+                <label for="username" >Username</label>
+                {{ form.username }}
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                {{ form.email.errors | safe }}
+                {{ form.email }}
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                {{ form.password1.errors | safe }}
+                {{ form.password1 }}
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                {{ form.password2.errors | safe }}
+                {{ form.password2 }}
+              </div>
+            <button type="submit" class="btn btn-dark" style="width: 100%;">Create Account</button>
+            <div class="auth-links">
+                <p>Already have an account? <a href="{% url 'account_login' %}">Sign In</a></p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .auth-links {
+            text-align: center;
+        }
+    </style>
+{%endblock%}

@@ -1,0 +1,25 @@
+{% extends "audir/base.html" %}
+{% load account %}
+{% block body_block %}
+
+<form method="post" action="{% url 'audir:delete_selected_projects' %}" onsubmit="return confirm('Delete selected projects?');">
+  {% csrf_token %}
+  <div class="container mt-5 w-50">
+    <button type="submit" class="btn btn-danger float-end">Delete</button>
+    <a class="btn btn-dark ms-2 me-2" href="{% url 'audir:create_project' %}">+ New Project</a>
+
+    <ul class="list-group mt-3 mb-5">
+      {% for proj in projects %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="selected_projects" value="{{ proj.id }}" id="proj-{{ proj.id }}">
+            <label class="form-check-label" for="proj-{{ proj.id }}">
+              <a href="{% url 'audir:project_detail' proj.id %}">{{ proj.project }}</a>
+            </label>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</form>
+{% endblock %}

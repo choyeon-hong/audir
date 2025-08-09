@@ -1,0 +1,200 @@
+{% extends "audir/base.html" %}
+{%load static %}
+{% load account %}
+{% block body_block %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.js"></script>
+
+
+{% comment %} 
+https://getbootstrap.com/docs/5.3/utilities/spacing/
+bootstrap: spacing
+{property}{sides}-{breakpoint}-{size}
+
+Where property is one of:
+m - for classes that set margin
+p - for classes that set padding
+
+Where sides is one of:
+t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+s - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+e - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+
+Where size is one of:
+0 - for classes that eliminate the margin or padding by setting it to 0
+1 - (by default) for classes that set the margin or padding to $spacer * .25
+2 - (by default) for classes that set the margin or padding to $spacer * .5
+3 - (by default) for classes that set the margin or padding to $spacer
+4 - (by default) for classes that set the margin or padding to $spacer * 1.5
+5 - (by default) for classes that set the margin or padding to $spacer * 3
+auto - for classes that set the margin to auto {% endcomment %}
+
+<body>
+<div class="table-container w-80 my-5">
+  <h2>Project : {{ project.project }}</h2>
+      <div class="mt-4 mb-3">
+        <form id="actionForm" method="post" enctype="multipart/form-data" onsubmit="return confirmAction();">
+        <!--csrf token for security-->
+        {% csrf_token %}
+        <input type="hidden" name="project_id" value="{{ project.id }}">
+        <a href="{% url 'audir:project_list'%}" class="btn btn-secondary">← Back</a>
+        <!--allows multiple file input-->
+        <input type="file" id="fileInput" name="file" style="display:none" multiple />
+        <button type="button" class="btn btn-dark" id="openFileDialogBtn">+ Add Image</button>
+        <button type="submit" class="btn btn-primary" onclick="setAction('submit')">Submit</button>
+        <button type="submit" class="btn btn-outline-secondary float-end ms-2 me-2" onclick="setAction('export')">Export</button>
+        <button type="submit" class="btn btn-dark float-end" onclick="setAction('delete')">Delete</button>
+        </div>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark group-divider">
+      <tr>
+        <th scope="col"><input type="checkbox"></th>
+        <th scope="col">File Name</th>
+        <th scope="col">Index (A)</th>
+        <th scope="col">Ring (B)</th>
+        <th scope="col">Ratio</th>
+        <th scope="col">Progression</th>
+        <th scope="col">Handedness</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for img in images %}
+      <tr class="clickable-row" data-href="{% url 'audir:result_detail' img.id %}">
+        <td>
+          <!--exclude link to result_detail to make it easy to select the boxes-->
+          <input type="checkbox" name="selected_images" value="{{ img.image.id }}" onclick="event.stopPropagation();">
+        </td>
+        <td>{{ img.image.file.name|cut:"upload/"}}</td>
+        <td>{{ img.length_index }}</td>
+        <td>{{ img.length_ring }}</td>
+        <td>{{ img.ratio }}</td>
+        <td>{{ img.progression }}</td>
+        <td>{{ img.handedness }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</form>
+
+  <!--Pagination-->
+  <!--https://wikidocs.net/71240-->
+  <!--https://getbootstrap.com/docs/5.1/components/pagination/-->
+  <ul class="pagination justify-content-center mt-5">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <!-- HTML characters character entity reference(non-ASCII) : &laquo : « -->
+        <a class="page-link" href="?page=1">&laquo;&laquo;</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;&laquo;</a>
+      </li>
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <li class="page-item">
+         <!-- &raquo : » -->
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;&raquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&raquo;&raquo;</a>
+      </li>
+    {% endif %}
+  </ul>
+
+<script>
+  let currentAction = "";
+
+  function setAction(actionType) {
+    const form = document.getElementById('actionForm');
+    currentAction = actionType;
+    //each action links to the urls
+    if (actionType === 'export') {
+      form.action = "{% url 'audir:generate_csv' %}";
+    } else if (actionType === 'delete') {
+      form.action = "{% url 'audir:delete_selected_images' %}";
+    } else if (actionType === 'submit') {
+      form.action = "{% url 'audir:project_detail' project.id %}";
+    }
+  }
+
+  function confirmAction() {
+    //confirmation messages
+    if (currentAction === 'export') {
+      return confirm('Export selected results?')
+    } else if (currentAction === 'delete') {
+      return confirm('Delete selected images?');
+    }
+    return true;
+  }
+
+  //link to the result detail
+  document.querySelectorAll('.clickable-row').forEach(row => {
+    row.addEventListener('click', function () {
+      window.location.href = this.dataset.href;
+    });
+  });
+
+  //trigger of openFileDialogBtn
+  document.getElementById('openFileDialogBtn').addEventListener('click', function() {
+  document.getElementById('fileInput').click();
+});
+</script>
+</div>
+</body>
+
+<style>
+    .project-item {
+      position: relative;
+    }
+    
+    .table-container {
+      padding-left: 18rem;
+      padding-right: 18rem;
+      flex: 1;
+    }
+
+    .pagination .page-item.active .page-link {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+    }
+
+  .pagination .page-link {
+    color: black;
+    }
+
+  .pagination .page-link:hover {
+    background-color: #f1f1f1;
+    color: black;
+    }
+</style>
+{% endblock %}

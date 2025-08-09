@@ -1,0 +1,98 @@
+{% extends "audir/base.html" %}
+{%load static %}
+{% load account %}
+{% block body_block %}
+
+<section class ="py-3 my-3">
+  <div class="text-center py-5">
+            <img class="d-block mx-auto mb-4 mt-5" src="{% static 'logo.png' %}" alt="logo" width="290" height="300">
+    <h1 class="display-5 fw-bold">A u D i R</h1>
+    <div class="col-lg-6 mx-auto">
+  <p class="lead mb-4">
+    <span class="bold-black">Au</span><span class="gray">tomated </span>
+    <span class="bold-black">Di</span><span class="gray">git </span>
+    <span class="bold-black">R</span><span class="gray">atio Measurements</span>
+  </p>
+    </div>
+      <p> Make your digit ratio measurements easy and accurate. No more manual measurements! <br> Improve the effiency and consistency of your research by automating the process using computer vision approaches. 
+        <br> No AI expertise required – we provide the technology. You focus on your research.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5 mt-5">
+        {% if user.is_authenticated %}
+        <a href="{% url 'audir:project_list' %}" class="btn btn-dark btn-lg">Start Here</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="btn btn-dark btn-lg">Sign Up Today</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+    <!-- how to use -->
+    <section class="py-5 py-xl-8 bsb-section-py-xxl-1 bg-light">
+      <div class="container mb-5 mb-md-6 mb-xl-10 py-3">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 text-center">
+            <h3 class="fs-6 text-secondary mb-2 text-uppercase">Our Service</h3>
+            <h2 class="display-4 fw-bold mb-0">How to Use AuDiR?</h2>
+            <h5 class="mtmb-0">After signing in, Go to "My Project" at the top of the website.</h5>
+          </div>
+        </div>
+      </div>
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-md-0 gx-xxl-5">
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+               <!--icons from : https://icons.getbootstrap.com/-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-clipboard-check mb-3" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+                  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+                </svg>
+                <h4 class="fw-bold mb-4">Create Project</h4>
+                <p class="mb-4 text-secondary">Start by creating a new project where you can upload and manage images. Each project allows you to calculate digit ratios from hand photos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-images mb-3" viewBox="0 0 16 16">
+                  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                  <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z"/>
+                </svg>
+                <h4 class="fw-bold mb-4">Upload Images</h4>
+                <p class="mb-4 text-secondary">Upload one or more hand images to your project. Our system automatically detects hand landmarks and prepares them for measurement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-clipboard-check mb-3" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+                  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+                </svg>
+                <h4 class="fw-bold mb-4">Get Result</h4>
+                <p class="mb-4 text-secondary">View finger lengths, handedness, and digit ratios with annotated images. Click on each result to see detailed data and the annotated image.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="text-center pt-5 pb-5">
+          <a href="{% url 'audir:about' %}" class="btn btn-dark btn-lg">Learn More</a>
+        </div>
+      </section>
+
+    <style>
+    .bold-black {
+      font-weight: bold;
+      color: black;
+    }
+    .gray {
+      color: gray;
+    }
+    </style>
+
+{%endblock%}

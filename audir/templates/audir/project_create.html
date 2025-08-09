@@ -1,0 +1,17 @@
+{% extends "audir/base.html" %}
+{% load account %}
+{% block body_block %}
+
+<div class="container my-5 w-50">
+  <h2>Create New Project</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="project" class="form-label">Project Name</label>
+      <input type="text" class="form-control" id="project" name="project" required />
+    </div>
+    <button type="submit" class="btn btn-dark">Create</button>
+    <a href="{% url 'audir:project_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

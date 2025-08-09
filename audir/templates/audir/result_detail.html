@@ -1,0 +1,63 @@
+{% extends "audir/base.html" %}
+{%load static %}
+{% load account %}
+{% block body_block %}
+<div class="container">
+  <a href="{% url 'audir:project_detail' result.image.project.id %}" class="btn btn-secondary mt-3 mb-3">← Back</a>
+  <h2>Image Analysis Result</h2>
+
+  <table class="table table-bordered w-auto mb-5">
+    <thead class="table-dark group-divider">
+      <tr>
+        <th>Input Image</th>
+        <th>Output Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <img src="{{ result.image.file.url }}" class="img-fluid mt-2" style="max-width: 400px;">
+        </td>
+        <td>
+          {% if result.result_image %}
+            <img src="{{ result.result_image.url }}" class="img-fluid mt-2" style="max-width: 400px;">
+          {% else %}
+            No result image
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <th>File Name</th>
+        <td>{{ result.image.file.name|cut:"upload/" }}</td>
+      </tr>
+      <tr>
+        <th>Index Finger (A)</th>
+        <td>{{ result.length_index }}</td>
+      </tr>
+      <tr>
+        <th>Ring Finger (B)</th>
+        <td>{{ result.length_ring }}</td>
+      </tr>
+      <tr>
+        <th>Ratio (A/B)</th>
+        <td>{{ result.ratio }}</td>
+      </tr>
+      <tr>
+        <th>Progression</th>
+        <td>{{ result.progression }}</td>
+      </tr>
+      <tr>
+        <th>Handedness</th>
+        <td>{{ result.handedness }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .container {
+  padding-left: 20rem;
+  padding-right: 20rem;
+  }
+</style>
+{% endblock %}

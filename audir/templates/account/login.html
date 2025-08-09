@@ -1,0 +1,56 @@
+{% extends 'audir/base.html' %}
+{% load account %}
+{% block body_block %}
+<!--use allauth builtin forms-->
+    <section class="main-content">
+    <div class="auth-container">
+    <h1>Login</h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="Username">Username</label>
+            {{ form.login }}
+            {{ form.username.errors | safe }}
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            {{ form.password }}
+            {{ form.password.errors.as_text }}
+        </div>
+    <button type="submit" class="btn btn-dark" style="width: 100%;">Log In</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <p>
+        Not registered?
+    <a href="{% url 'account_signup' %}">Register here!</a>
+    </div>
+    </section>
+
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .auth-links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
+{%endblock%}
+
