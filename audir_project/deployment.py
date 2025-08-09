@@ -4,7 +4,7 @@ from .settings import BASE_DIR
 
 SECRET_KEY = os.environ['SECRET']
 WEBSITE_HOSTNAME = os.environ.get('WEBSITE_HOSTNAME', '')
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [WEBSITE_HOSTNAME] if WEBSITE_HOSTNAME else ['*']
 CSRF_TRUSTED_ORIGINS = ['https://' + WEBSITE_HOSTNAME] if WEBSITE_HOSTNAME else []
